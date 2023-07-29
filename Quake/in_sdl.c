@@ -38,17 +38,17 @@ extern qboolean	bind_grab;	//from the menu code, so that we regrab the mouse in 
 
 static cvar_t in_debugkeys = {"in_debugkeys", "0", CVAR_NONE};
 
-#ifdef __APPLE__
-/* Mouse acceleration needs to be disabled on OS X */
-#define MACOS_X_ACCELERATION_HACK
-#endif
+// #ifdef __APPLE__
+// /* Mouse acceleration needs to be disabled on OS X */
+// #define MACOS_X_ACCELERATION_HACK
+// #endif
 
-#ifdef MACOS_X_ACCELERATION_HACK
-#include <IOKit/IOTypes.h>
-#include <IOKit/hidsystem/IOHIDLib.h>
-#include <IOKit/hidsystem/IOHIDParameter.h>
-#include <IOKit/hidsystem/event_status_driver.h>
-#endif
+// #ifdef MACOS_X_ACCELERATION_HACK
+// #include <IOKit/IOTypes.h>
+// #include <IOKit/hidsystem/IOHIDLib.h>
+// #include <IOKit/hidsystem/IOHIDParameter.h>
+// #include <IOKit/hidsystem/event_status_driver.h>
+// #endif
 
 // SDL2 Game Controller cvars
 cvar_t	joy_deadzone_look = { "joy_deadzone_look", "0.175", CVAR_ARCHIVE };

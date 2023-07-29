@@ -1,4 +1,4 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
 
 PROJECT(QSS)
 
@@ -35,9 +35,6 @@ ELSE()
 	MESSAGE(WARNING "zlib not available, pk3 support will be disabled.")	
 ENDIF()
 
-
-
-
 ### audio drivers
 IF (1)
 	SET(QS_FILES ${QS_FILES} Quake/snd_wave.c)
@@ -65,9 +62,9 @@ IF(OPUS_FOUND AND OPUSFILE_FOUND)
 	SET(QS_LIBS ${QS_LIBS} ${OPUSFILE_LIBRARIES})
 	SET(QS_FILES ${QS_FILES} Quake/snd_opus.c)
 	SET(QS_DEFS ${QS_DEFS};USE_CODEC_OPUS)
-	MESSAGE("Found libopusfile support.")	
+	MESSAGE("Found libopusfile support.")
 ELSE()
-	MESSAGE(WARNING "no opusfile support.")	
+	MESSAGE(WARNING "no opusfile support.")
 ENDIF()
 
 PKG_SEARCH_MODULE(VORBISFILE vorbisfile)
@@ -128,7 +125,6 @@ ENDIF()
 #	MESSAGE(WARNING "no umx support.")
 #ENDIF()
 
-INCLUDE_DIRECTORIES(${QS_DIRS})
 ADD_EXECUTABLE(quakespasm
 	${QS_FILES}
 	Quake/bgmusic.c
